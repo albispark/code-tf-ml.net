@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbaloneTensorFlow", "AbaloneTensorFlow\AbaloneTensorFlow.csproj", "{515E7EDC-CF68-4502-ACBE-1BD3289DFB1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{515E7EDC-CF68-4502-ACBE-1BD3289DFB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515E7EDC-CF68-4502-ACBE-1BD3289DFB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515E7EDC-CF68-4502-ACBE-1BD3289DFB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515E7EDC-CF68-4502-ACBE-1BD3289DFB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1094C0E-1A66-46AD-BAA6-CC434D774AFB}
+	EndGlobalSection
+EndGlobal

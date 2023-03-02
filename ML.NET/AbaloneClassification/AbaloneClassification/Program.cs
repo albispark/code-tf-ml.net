@@ -78,20 +78,6 @@ class Program
         };
         var averagedPerceptron = mlContext.BinaryClassification.Trainers.AveragedPerceptron(averagedPerceptronOptions);
 
-        // Model Builder's best trainer
-        var fastTreeOptions = new FastTreeBinaryTrainer.Options()
-        {
-            NumberOfLeaves = 40,
-            MinimumExampleCountPerLeaf = 62,
-            NumberOfTrees = 5,
-            MaximumBinCountPerFeature = 843,
-            FeatureFraction = 0.84016003053467,
-            LearningRate = 0.0135145459422405,
-            LabelColumnName = @"Rings",
-            FeatureColumnName = @"Features"
-        };
-        var fastTree = mlContext.BinaryClassification.Trainers.FastTree(fastTreeOptions);
-
         var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(@"Sex", @"Sex", outputKind: OneHotEncodingEstimator.OutputKind.Indicator)
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new[] { @"Sex", @"Length", @"Diameter", @"Height", @"Whole weight", 
                                         @"Shucked weight", @"Viscera weight", @"Shell weight" }))
@@ -99,9 +85,6 @@ class Program
                                     .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(
                                         binaryEstimator: averagedPerceptron,
                                         labelColumnName: @"Rings"))
-                                    //.Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(
-                                    //    binaryEstimator: fastTree,
-                                    //    labelColumnName: @"Rings"))
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName: @"PredictedLabel", inputColumnName: @"PredictedLabel"));
         
 
